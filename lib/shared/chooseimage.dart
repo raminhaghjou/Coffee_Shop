@@ -1,8 +1,5 @@
-import 'dart:io';
-
 import 'package:coffee_shop_app/auth/register_page.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 class ChooseImage extends StatefulWidget {
   @override
@@ -56,21 +53,21 @@ class _ChooseImageState extends State<ChooseImage> {
   }
 
   Future openGallary() async {
-    var image = await ImagePicker().pickImage(source: ImageSource.gallery);
-    final File picture = File(image.path);
-    setState(() {
-      RegisterScreenPageWidget.image = picture;
-    });
-    Navigator.pop(context);
+    // var image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    // final File picture = File(image.path);
+    // setState(() {
+    //   RegisterScreenPageWidget.image = picture;
+    // });
+    // Navigator.pop(context);
   }
 
   Future<void> openCamera() async {
-    var image = await ImagePicker().pickImage(source: ImageSource.camera);
-    final File picture = File(image.path);
-    setState(() {
-      RegisterScreenPageWidget.image = picture;
-    });
-    Navigator.pop(context);
+    // var image = await ImagePicker().pickImage(source: ImageSource.camera);
+    // final File picture = File(image.path);
+    // setState(() {
+    //   RegisterScreenPageWidget.image = picture;
+    // });
+    // Navigator.pop(context);
   }
 
   Widget decideImageView() {
