@@ -1,12 +1,11 @@
+import 'package:coffee_shop_app/util/const.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttercoffee/src/util/const.dart';
 
 class OtpPage extends StatelessWidget {
   final focus = FocusNode();
   final String phoneNumber;
 
-   OtpPage({Key key, this.phoneNumber}) : super(key: key);
-
+  OtpPage({Key key, this.phoneNumber}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +14,7 @@ class OtpPage extends StatelessWidget {
         width: 50,
         child: TextFormField(
           autofocus: true,
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold
-
-          ),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
           onChanged: (str) {
             if (str.length == 1) {
@@ -27,7 +22,6 @@ class OtpPage extends StatelessWidget {
             }
           },
           decoration: InputDecoration(
-
             border: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.grey,
@@ -125,18 +119,18 @@ class OtpPage extends StatelessWidget {
                       color: Colors.greenAccent.withOpacity(.4))
                 ],
               ),
-              child: Center(child: Text("verify & proceed".toUpperCase(),
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                
-              ),)),
+              child: Center(
+                  child: Text(
+                "verify & proceed".toUpperCase(),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              )),
             )
           ],
         ),
       ),
     );
   }
-
 }
-

@@ -1,21 +1,13 @@
-import 'package:dio/dio.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:coffee_shop_app/shared/button.dart';
+import 'package:coffee_shop_app/util/const.dart';
+import 'package:coffee_shop_app/util/router_path.dart';
+import 'package:coffee_shop_app/util/sizeconfig.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttercoffee/src/provider/auth_provider.dart';
-import 'package:fluttercoffee/src/shared/button.dart';
-import 'package:fluttercoffee/src/util/const.dart';
-import 'package:fluttercoffee/src/util/router_path.dart';
-import 'package:fluttercoffee/src/util/sizeconfig.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-import 'package:provider/provider.dart';
-
 
 class OptionAuthPage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -23,8 +15,7 @@ class OptionAuthPage extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage('assets/onboard/splash.png'),
-              fit: BoxFit.cover
-          ),
+              fit: BoxFit.cover),
         ),
         child: Stack(
           children: <Widget>[
@@ -41,7 +32,9 @@ class OptionAuthPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: getScreenWith(10),vertical: getScreenHeight(20)),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: getScreenWith(10),
+                        vertical: getScreenHeight(20)),
                     width: getScreenWith(100),
                     decoration: BoxDecoration(
                       border: Border.all(
@@ -50,27 +43,28 @@ class OptionAuthPage extends StatelessWidget {
                       ),
                     ),
                     child: Column(
-
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Center(
-                          child: Text("Little Coffee Shop",style: TextStyle(
-                              letterSpacing: 1.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: getScreenWith(20)
-                          ),),
+                          child: Text(
+                            "Little Coffee Shop",
+                            style: TextStyle(
+                                letterSpacing: 1.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: getScreenWith(20)),
+                          ),
                         )
                       ],
                     ),
                   ),
-
                 ],
               ),
             ),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: getScreenWith(20),vertical: getScreenHeight(20)),
+              padding: EdgeInsets.symmetric(
+                  horizontal: getScreenWith(20), vertical: getScreenHeight(20)),
               child: Align(
                 alignment: FractionalOffset.bottomCenter,
                 child: Column(
@@ -78,11 +72,11 @@ class OptionAuthPage extends StatelessWidget {
                   children: <Widget>[
                     Button(
                       title: 'Sign In',
-                      onTap: (){
+                      onTap: () {
                         Navigator.pushNamed(context, LoginPage);
                       },
                     ),
-                     SizedBox(
+                    SizedBox(
                       height: getScreenHeight(10),
                     ),
                     SizedBox(
@@ -93,9 +87,7 @@ class OptionAuthPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         color: Colors.blue,
-                        onPressed: (){
-
-                        },
+                        onPressed: () {},
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -103,7 +95,7 @@ class OptionAuthPage extends StatelessWidget {
                               FontAwesomeIcons.facebookF,
                               color: Colors.white,
                             ),
-                             SizedBox(
+                            SizedBox(
                               width: getScreenHeight(20),
                             ),
                             Text(
@@ -114,38 +106,39 @@ class OptionAuthPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                     SizedBox(
+                    SizedBox(
                       height: getScreenHeight(40),
                     ),
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Navigator.pushNamed(context, RegisterPage);
                       },
-                      child: Text('Already have an account ? - Sign up',style: TextStyle(
-                          color: Colors.white
-                      ),),
-                    ),
-                      SizedBox(
-                        height: 5,
+                      child: Text(
+                        'Already have an account ? - Sign up',
+                        style: TextStyle(color: Colors.white),
                       ),
-                GestureDetector(
-                  onTap: (){
-                    Navigator.pushNamed(context, ForgotPassPagee);
-                  },
-                  child: Text('Forgot your password? - Receive',style: TextStyle(
-                      color: Colors.white,
-                  ),),
-                )
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, ForgotPassPagee);
+                      },
+                      child: Text(
+                        'Forgot your password? - Receive',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
             )
-
           ],
         ),
       ),
     );
-
   }
 }
-

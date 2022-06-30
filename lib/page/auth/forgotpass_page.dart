@@ -1,8 +1,8 @@
+import 'package:coffee_shop_app/providers/auth_provider.dart';
+import 'package:coffee_shop_app/shared/containertextform.dart';
+import 'package:coffee_shop_app/util/const.dart';
+import 'package:coffee_shop_app/util/router_path.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttercoffee/src/provider/auth_provider.dart';
-import 'package:fluttercoffee/src/shared/containertextform.dart';
-import 'package:fluttercoffee/src/util/const.dart';
-import 'package:fluttercoffee/src/util/router_path.dart';
 import 'package:provider/provider.dart';
 
 class ForgoPassPage extends StatefulWidget {
@@ -17,13 +17,13 @@ class _ForgoPassPageState extends State<ForgoPassPage> {
 
   @override
   Widget build(BuildContext context) {
-    var data = Provider.of<AuthProvider>(context,listen: false);
+    var data = Provider.of<AuthProvider>(context, listen: false);
 
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -34,8 +34,11 @@ class _ForgoPassPageState extends State<ForgoPassPage> {
               ),
               IconButton(
                 alignment: Alignment.topLeft,
-                icon: Icon(Icons.arrow_back_ios,size: 18,),
-                onPressed: (){
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  size: 18,
+                ),
+                onPressed: () {
                   Navigator.pop(context);
                 },
               ),
@@ -47,18 +50,20 @@ class _ForgoPassPageState extends State<ForgoPassPage> {
                 height: 20,
               ),
               Center(
-                child: Text("Forgot your password",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22
-                ),),
+                child: Text(
+                  "Forgot your password",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22),
+                ),
               ),
               SizedBox(
                 height: 10,
               ),
-              Center(child:
-                Text("Enter your register email bellow to receive password reset intrusction")),
+              Center(
+                  child: Text(
+                      "Enter your register email bellow to receive password reset intrusction")),
               SizedBox(
                 height: 20,
               ),
@@ -66,15 +71,13 @@ class _ForgoPassPageState extends State<ForgoPassPage> {
                 child: TextFormField(
                   controller: emailController,
                   decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'abc@gmail.com'
-                  ),
-                  onChanged: (value){
+                      border: InputBorder.none, hintText: 'abc@gmail.com'),
+                  onChanged: (value) {
                     if (value.isNotEmpty) {
                       setState(() {
-                        isShowButton= true;
+                        isShowButton = true;
                       });
-                    }else{
+                    } else {
                       setState(() {
                         isShowButton = false;
                       });
@@ -92,21 +95,21 @@ class _ForgoPassPageState extends State<ForgoPassPage> {
                   width: double.infinity,
                   child: RaisedButton(
                     color: kColorGreen,
-                    onPressed: (){
+                    onPressed: () {
                       data.forgotPassword(emailController.text);
                       Navigator.pushReplacementNamed(context, SucessPagee);
                     },
-                    child: Text('Send',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold
-                    ),),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),),
+                    child: Text(
+                      'Send',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
                 ),
               ),
-
             ],
           ),
         ),
